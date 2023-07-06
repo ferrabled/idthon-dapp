@@ -1,3 +1,25 @@
+# My IDTHON DAPP
+
+If you believe that the price of Polygon will rise within the next 24 hours, you have the opportunity to vote for it.
+But to do so, you need to be 18 years old. You can prove it with Polygon ID 
+
+
+![image](https://github.com/ferrabled/idthon-dapp/assets/48551658/f9e5de8b-7cc2-47a0-9d97-da343c6059ee)
+
+![image](https://github.com/ferrabled/idthon-dapp/assets/48551658/c1e39f65-9442-4f70-907b-18adf8bb6d9f)
+
+
+Once you've already proved you're old enough, you'll enter into the dapp, connected to the [smart contract](0x98FCA914eBB5b5457839274baCF607595fBC390D)
+
+![image](https://github.com/ferrabled/idthon-dapp/assets/48551658/9b675ae8-a31e-4d37-a0d1-c101a6e28069)
+
+
+![image](https://github.com/ferrabled/idthon-dapp/assets/48551658/6beb2502-be25-47fc-af51-bb06bd4d8726)
+
+
+![image](https://github.com/ferrabled/idthon-dapp/assets/48551658/e7129caa-783a-4d28-ad2e-649f9ce5c7b5)
+
+
 # This is a template for creating your own VC Gated Dapp
 
 This template spins up a dapp that is 
