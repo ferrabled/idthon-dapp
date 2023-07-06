@@ -108,7 +108,7 @@ function PolygonIDVerifier({
   return (
     <div>
       {sessionId ? (
-        <Button colorScheme="purple" onClick={onOpen} margin={4}>
+        <Button colorScheme="blue" onClick={onOpen} margin={4}>
           Prove access rights
         </Button>
       ) : (
@@ -135,7 +135,7 @@ function PolygonIDVerifier({
               {isHandlingVerification && (
                 <div>
                   <p>Authenticating...</p>
-                  <Spinner size={"xl"} colorScheme="purple" my={2} />
+                  <Spinner size={"xl"} colorScheme="blue" my={2} />
                 </div>
               )}
               {verificationMessage}
@@ -162,7 +162,7 @@ function PolygonIDVerifier({
               <Button
                 fontSize={"10px"}
                 margin={1}
-                colorScheme="purple"
+                colorScheme="red"
                 onClick={() => openInNewTab(linkDownloadPolygonIDWalletApp)}
               >
                 Download the Polygon ID Wallet App{" "}
@@ -171,7 +171,7 @@ function PolygonIDVerifier({
               <Button
                 fontSize={"10px"}
                 margin={1}
-                colorScheme="purple"
+                colorScheme="green"
                 onClick={() => openInNewTab(issuerOrHowToLink)}
               >
                 Get a {credentialType} VC <ExternalLinkIcon marginLeft={2} />

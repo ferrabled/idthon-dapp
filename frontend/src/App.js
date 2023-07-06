@@ -3,6 +3,7 @@ import { useState } from "react";
 import PolygonIDVerifier from "./PolygonIDVerifier";
 import VcGatedDapp from "./VcGatedDapp";
 import { Center, Card, Image, CardBody, Container } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 function App() {
   // if you're developing and just want to see the dapp without going through the Polygon ID flow,
@@ -22,12 +23,10 @@ function App() {
             >
               <CardBody style={{ paddingBottom: 0 }}>
                 <p>
-                  This is a fullstack template for creating a Polygon ID VC{" "}
-                  <a href="https://0xpolygonid.github.io/tutorials/#core-concepts-of-polygon-id-verifiable-credentials-identity-holder-issuer-and-verifier-triangle-of-trust">
-                    (Verifiable Credential)
-                  </a>{" "}
-                  gated dapp. Prove you were born before January 1, 2023 to use
-                  the dapp
+                  Welcome to the Web3 prediction market dapp! <br /> 💥 Will Polygon go up or down in the next 24 hours? 💥
+                  <br /> You must be 18 years or older to use it. Please prove it using Polygon ID.
+
+                  None of your data is stored on our servers. We only use Polygon ID to verify your age.
                 </p>
 
                 <PolygonIDVerifier
@@ -44,16 +43,12 @@ function App() {
                   onVerificationResult={setProvedAccessBirthday}
                 />
                 <Image
-                  src="https://bafybeibcgo5anycve5flw6pcz5esiqkvrzlmwdr37wcqu33u63olskqkze.ipfs.nftstorage.link/"
+                  src="market.jpeg"
                   alt="Polygon devs image"
                   borderRadius="lg"
                 />
               </CardBody>
-              <a
-                href="https://twitter.com/0ceans404"
-                target="_blank"
-                rel="noreferrer"
-              >
+              
                 <p
                   style={{
                     position: "absolute",
@@ -62,10 +57,21 @@ function App() {
                     fontSize: "8px",
                   }}
                 >
-                  Template built with 💜 by Steph
+                  Template built with 💜 by <a
+                href="https://twitter.com/0ceans404"
+                target="_blank"
+                rel="noreferrer"
+              > Steph </a>, modified by <a href="https://twitter.com/ferr_dev" target="_blank" rel="noreferrer">Fernando 🐉</a>
                 </p>
-              </a>
             </Card>
+            <Button
+                fontSize={"10px"}
+                margin={10}
+                colorScheme="red"
+                onClick={() => setProvedAccessBirthday(true)}
+              >
+                Press here if the verification does not work
+              </Button>
           </Container>
         </Center>
       )}

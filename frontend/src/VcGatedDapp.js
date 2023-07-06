@@ -33,7 +33,7 @@ function VcGatedDapp() {
 
   // variables specific to demo
   const myZkEVMSmartContractAddress =
-    "0x3Baf2aa2aD287949590cD39a731fD17606c7D10F";
+    "0x98FCA914eBB5b5457839274baCF607595fBC390D";
 
   const contractConfig = {
     address: myZkEVMSmartContractAddress,
@@ -111,12 +111,30 @@ function VcGatedDapp() {
     }
   };
 
+  const decrementCounter = async () => {
+    if (addressIsConnected) {
+      const { hash } = await writeContract({
+        ...contractConfig,
+        functionName: "decrement",
+        // args: [69],
+      });
+      setIsLoading(true);
+      const data = await waitForTransaction({
+        hash,
+      });
+      await readCounterValue();
+      setIsLoading(false);
+    } else {
+      alert("Connect wallet to update blockchain data");
+    }
+  };
+
   return (
     <div id="vc-gated-dapp">
       <Box background="black" color="white" py={4}>
         <Container maxW={"80%"}>
           <Flex justifyContent="space-between">
-            <Heading>My VC Gated Dapp</Heading>
+            <Heading>Web3 Polygon Price Prediction Dapp</Heading>
             <ConnectButton showBalance={false} />
           </Flex>
         </Container>
@@ -169,12 +187,15 @@ function VcGatedDapp() {
             <Card my={4} p={4}>
               <Center>
                 <VStack>
-                  <Heading>Counter Dapp</Heading>
+                  <Heading>Web3 Polygon Price Prediction Dapp</Heading>
 
-                  <p>The current count is</p>
-                  <Heading>{isLoading ? <Spinner></Spinner> : count}</Heading>
+                  <p>Right now, there are </p>
+                  <Heading>{isLoading ? <Spinner></Spinner> : count}</Heading><p>votes of people who think Polygon will increase</p>
                   <Button onClick={() => incrementCounter()}>
                     Increment counter
+                  </Button>
+                  <Button onClick={() => decrementCounter()}>
+                    Decrement counter (if it is bigger than 0)
                   </Button>
                 </VStack>
               </Center>
@@ -190,7 +211,7 @@ function VcGatedDapp() {
                 </a>{" "}
                 and the{" "}
                 <a
-                  href="https://github.com/oceans404/fullstack-zkevm/blob/complete/contracts/Counter.sol"
+                  href="https://github.com/ferrabled/idthon-dapp/blob/main/contracts/Counter.sol"
                   target="_blank"
                 >
                   {" "}

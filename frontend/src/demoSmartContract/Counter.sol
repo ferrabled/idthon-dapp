@@ -8,6 +8,12 @@ contract Counter {
         currentCount = currentCount + 1;
     }
 
+    function decrement() public {
+        require(currentCount > 0);
+        currentCount = currentCount - 1;
+
+    }
+
     function retrieve() public view returns (uint256){
         return currentCount;
     }
